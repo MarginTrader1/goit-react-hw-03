@@ -1,0 +1,41 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inputText {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.error {
+  color: red;
+}
+
+.inputField {
+  padding: 10px;
+}
+
+.button {
+  
+  width: 200px;
+  height: 30px;
+  border-radius: 8px;
+  background-color: #3f51b51a;
+  cursor: pointer;
+}
+
+.spanText {
+  display: flex;
+  align-items: center;
+  width: 50px;
+}

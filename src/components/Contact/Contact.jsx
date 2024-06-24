@@ -9,7 +9,7 @@ const Contact = ({ contacts, deleteContact }) => {
          {contacts.map(({ id, name, number }) => {
             return (
                <li key={id} className={css.card}>
-                  <div>
+                  <div className={css.contact}>
                      <div className={css.cardName}>
                         <FaUser />
                         <p>{name}</p>
