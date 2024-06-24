@@ -9,15 +9,24 @@ const initialValues = {
   number: "",
 };
 
+// паттерн для проверки номера
+const phoneRegExp =
+  /^\+?\d{1,4}?[ .-]?(\(\d{1,3}\))?([ .-]?\d{1,4}){1,4}([ .-]?\d{1,9})?$/;
+
+// паттерн для проверки имени
+const nameRegExp =
+  "^[a-zA-Zа-яА-Я]+(([' \\-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$";
+
 const ValidationSchema = Yup.object().shape({
   name: Yup.string()
     .min(3, "Too Short!")
-    .max(25, "Too Long!")
-    .required("Required"),
+    .max(50, "Too Long!")
+    .matches(nameRegExp, "Неверный ввод")
+    .required("Заполните поле"),
   number: Yup.string()
-    .min(3, "Too Short!")
-    .max(12, "Too long")
-    .required("Required"),
+    .min(7, "Too Short!")
+    .matches(phoneRegExp, "Неверный ввод")
+    .required("Заполните поле"),
 });
 
 const ContactForm = ({ addContact }) => {
