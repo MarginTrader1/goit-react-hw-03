@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import ContactForm from "../ContactForm/ContactForm";
 import ContactList from "../ContactList/ContactList";
+import SearchBox from "../SearchBox/SearchBox";
 
-import css from './App.module.css'
+import css from "./App.module.css";
 
 //начальный стейт
 const initialContacts = [
@@ -26,10 +27,21 @@ const getContacts = () => {
 
 const App = () => {
   const [state, setState] = useState(getContacts); //начальные контакты
+  const [searchFilter, setSearchFilter] = useState(""); //начальний фильтр
 
   // добавление контакта
   const addContact = (contact) => {
-    setState([...state, contact]);
+    //проверка на наличиe контакта
+    let existWord = state.some(
+      (object) => object.name.toLowerCase() === contact.name.toLowerCase()
+    ); //проверяем контакт через метод some() (true/false)
+
+    if (existWord) {
+      alert(`${contact.name} is already in contacts.`);
+      return; // паттерн "раннее возвращение" через return
+    } else {
+      setState([...state, contact]);
+    }
   };
 
   //удаление контакта
@@ -37,16 +49,27 @@ const App = () => {
     setState(state.filter((item) => item.id !== id)); //фильтрация стейта по id
   };
 
+  //поиск контакта
+  const searchContact = (value) => {
+    setSearchFilter(value);
+  };
+
   //добавление в локал сторедж
   useEffect(() => {
     localStorage.setItem("contacts", JSON.stringify(state));
   }, [state]);
 
+  //фильтруем cтейт по значению filter
+  let filteredData = state.filter((item) =>
+    item.name.toLowerCase().includes(searchFilter.toLowerCase())
+  );
+
   return (
     <div className={css.container}>
       <h1>Phonebook</h1>
       <ContactForm addContact={addContact} />
-      <ContactList contacts={state} deleteContact={deleteContact} />
+      <SearchBox search={searchContact} />
+      <ContactList contacts={filteredData} deleteContact={deleteContact} />
     </div>
   );
 };

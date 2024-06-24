@@ -26,16 +26,9 @@ form {
 }
 
 .button {
-  
   width: 200px;
   height: 30px;
   border-radius: 8px;
   background-color: #3f51b51a;
   cursor: pointer;
-}
-
-.spanText {
-  display: flex;
-  align-items: center;
-  width: 50px;
 }

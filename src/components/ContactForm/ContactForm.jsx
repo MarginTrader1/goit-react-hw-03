@@ -36,8 +36,8 @@ const ContactForm = ({ addContact }) => {
   const numberFieldId = useId();
 
   const submit = (values, actions) => {
+    //добавляем контакт
     addContact({
-      //добавляем контакт
       id: nanoid(),
       ...values,
     });
@@ -80,7 +80,7 @@ const ContactForm = ({ addContact }) => {
           </div>
         </div>
         <button type="submit" className={css.button}>
-          Submit
+          Add contact
         </button>
       </Form>
     </Formik>
