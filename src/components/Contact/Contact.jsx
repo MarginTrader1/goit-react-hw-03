@@ -6,11 +6,11 @@ import css from "./Contact.module.css";
 const Contact = ({ name, number }) => {
   return (
     <div className={css.contact}>
-      <div className={css.cardName}>
+      <div className={css.name}>
         <FaUser />
         <p>{name}</p>
       </div>
-      <div className={css.cardNumber}>
+      <div className={css.number}>
         <FaPhoneAlt />
         <p>{number}</p>
       </div>
