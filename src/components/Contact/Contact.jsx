@@ -5,7 +5,7 @@ import css from "./Contact.module.css";
 
 const Contact = ({ name, number }) => {
   return (
-    <>
+    <div className={css.contact}>
       <div className={css.cardName}>
         <FaUser />
         <p>{name}</p>
@@ -14,7 +14,7 @@ const Contact = ({ name, number }) => {
         <FaPhoneAlt />
         <p>{number}</p>
       </div>
-    </>
+    </div>
   );
 };
 

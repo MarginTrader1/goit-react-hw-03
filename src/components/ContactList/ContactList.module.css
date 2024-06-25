@@ -17,12 +17,6 @@
   border-radius: 5px;
 }
 
-.contact {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
 .button {
   min-width: 100px;
   height: 25px;
