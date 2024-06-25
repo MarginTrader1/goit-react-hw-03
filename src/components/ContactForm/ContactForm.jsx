@@ -21,7 +21,7 @@ const nameRegExp =
 
 const ValidationSchema = Yup.object().shape({
   name: Yup.string()
-    .min(2, "Too Short!")
+    .min(3, "Too Short!")
     .max(50, "Too Long!")
     .matches(nameRegExp, "Неверный ввод")
     .required("Заполните поле!"),
