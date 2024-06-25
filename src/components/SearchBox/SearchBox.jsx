@@ -6,12 +6,12 @@ const SearchBox = ({ search }) => {
     search(evt.target.value);
   };
 
-  const searchFieldId = useId();
+  const id = useId();
 
   return (
     <div className={css.input}>
-      <label htmlFor={searchFieldId}>Find contacts by name</label>
-      <input type="text" id={searchFieldId} onChange={handleChange} />
+      <label htmlFor={`search-${id}`}>Find contacts by name</label>
+      <input type="text" id={`search-${id}`} onChange={handleChange} />
     </div>
   );
 };

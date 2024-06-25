@@ -32,8 +32,7 @@ const ValidationSchema = Yup.object().shape({
 });
 
 const ContactForm = ({ addContact }) => {
-  const nameFieldId = useId();
-  const numberFieldId = useId();
+  const id = useId();
 
   const submit = (values, actions) => {
     //добавляем контакт
@@ -52,24 +51,24 @@ const ContactForm = ({ addContact }) => {
     >
       <Form className={css.form}>
         <div className={css.input}>
-          <label htmlFor={nameFieldId}>Name</label>
+          <label htmlFor={`name-${id}`}>Name</label>
           <div className={css.inputText}>
             <Field
               type="text"
               name="name"
-              id={nameFieldId}
+              id={`name-${id}`}
               className={css.inputField}
             />
             <ErrorMessage name="name" component="span" className={css.error} />
           </div>
         </div>
         <div className={css.input}>
-          <label htmlFor={numberFieldId}>Number</label>
+          <label htmlFor={`number-${id}`}>Number</label>
           <div className={css.inputText}>
             <Field
               type="text"
               name="number"
-              id={numberFieldId}
+              id={`number-${id}`}
               className={css.inputField}
             />
             <ErrorMessage
