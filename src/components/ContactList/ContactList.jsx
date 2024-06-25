@@ -8,12 +8,12 @@ const ContactList = ({ contacts, deleteContact }) => {
       {contacts.map(({ id, name, number }) => {
         return (
           <li key={id} className={css.card}>
-            <Contact
-              id={id}
-              name={name}
-              number={number}
-              deleteContact={deleteContact}
-            />
+            <div className={css.contact}>
+              <Contact name={name} number={number} />
+            </div>
+            <button className={css.button} onClick={() => deleteContact(id)}>
+              {"Delete"}
+            </button>
           </li>
         );
       })}

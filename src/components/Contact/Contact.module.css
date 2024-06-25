@@ -1,25 +1,9 @@
-
-.contact {
-   display: flex;
-   flex-direction: column;
-   gap: 5px;
-}
-
 .cardName {
-   display: flex;
-   gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .cardNumber {
-   display: flex;
-   gap: 10px;
-}
-
-.button {
-   min-width: 100px;
-   height: 25px;
-   border-radius: 8px;
-   background-color: #3f51b51a;
-   cursor: pointer;
-   text-transform: capitalize;
+  display: flex;
+  gap: 10px;
 }

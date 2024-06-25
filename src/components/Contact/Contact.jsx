@@ -3,22 +3,17 @@ import { FaUser } from "react-icons/fa6";
 
 import css from "./Contact.module.css";
 
-const Contact = ({ id, name, number, deleteContact }) => {
+const Contact = ({ name, number }) => {
   return (
     <>
-      <div className={css.contact}>
-        <div className={css.cardName}>
-          <FaUser />
-          <p>{name}</p>
-        </div>
-        <div className={css.cardNumber}>
-          <FaPhoneAlt />
-          <p>{number}</p>
-        </div>
+      <div className={css.cardName}>
+        <FaUser />
+        <p>{name}</p>
       </div>
-      <button className={css.button} onClick={() => deleteContact(id)}>
-        {"Delete"}
-      </button>
+      <div className={css.cardNumber}>
+        <FaPhoneAlt />
+        <p>{number}</p>
+      </div>
     </>
   );
 };
